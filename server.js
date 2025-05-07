@@ -22,6 +22,7 @@ app.use("/movie", movieRouter);
 
 mongoose
   .connect(process.env.MONGODB)
+  // .connect(process.env.MONGODB)
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => {
