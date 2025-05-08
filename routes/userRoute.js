@@ -1,6 +1,6 @@
 const express = require("express");
 const bcryptjs = require("bcryptjs");
-const jwt = require("jsonwebtoken"); // Make sure this is required
+const jwt = require("jsonwebtoken");
 const User = require("../models/userModel.js");
 
 const userRouter = express.Router();
@@ -53,7 +53,7 @@ userRouter.post("/login", async (req, res) => {
       expiresIn: "1d",
     });
 
-    res.cookie("token", token, { httpOnly: true }); // optional, based on frontend usage
+    res.cookie("token", token, { httpOnly: true });
     res.status(200).json({ message: "Logged In Successfully", token });
   } catch (error) {
     console.error(error);
